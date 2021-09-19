@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import MyDocument from './components/mydoc';
 import { PDFViewer } from '@react-pdf/renderer'
 
