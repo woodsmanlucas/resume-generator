@@ -1,5 +1,11 @@
-import MyDocument from './components/mydoc';
-import { PDFViewer } from '@react-pdf/renderer'
+import * as React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Resume from './pages/Resume';
+import ResumeGenerator from './pages/ResumeGenerator';
 
 const styles = {
   width: "100vw",
@@ -8,9 +14,17 @@ const styles = {
 
 function App() {
   return (
-    <PDFViewer style={styles}>
-      <MyDocument/>
-    </PDFViewer>
+    <Router>
+      <Switch>
+        <Route path="/resume">
+          <Resume />
+        </Route>
+        <Route path="/">
+          <ResumeGenerator />
+        </Route>
+      </Switch>
+    </Router>
+    
   );
 }
 

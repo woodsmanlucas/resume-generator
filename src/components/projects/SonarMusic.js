@@ -1,15 +1,9 @@
 import React, { Fragment } from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
-
-const styles = StyleSheet.create({
-    green: {
-        color: "#556B2F",
-        fontSize: 11
-    }
-})
+import { Text, View,  } from '@react-pdf/renderer';
+import styles from "./projectStyles"
 
 const SonarMusic = () => (
-    <View>
+    <View style={styles.container}>
         <Text style={styles.green}>SONAR MUSIC WEBSITE – In a team of Two.</Text>
     </View> 
     )

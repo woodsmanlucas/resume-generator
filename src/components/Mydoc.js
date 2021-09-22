@@ -1,6 +1,13 @@
 import React from 'react';
 import { Page, Text, Link, View, Document, StyleSheet } from '@react-pdf/renderer';
-import SonarMusic from './sonarMusic';
+import SonarMusic from './projects/SonarMusic';
+import Movies from "./projects/Movies";
+import MobileProject from "./projects/MobileProject";
+import BlackJack from "./projects/BlackJack";
+import Portfolio from "./projects/Portfolio";
+import SonarSwift from "./projects/SonarSwift";
+import Todo from "./projects/ToDo";
+import Pong from "./projects/Pong";
 
 const profileStatement = "Well Hello There"
 // Create styles
@@ -61,6 +68,11 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between"
     },
+    splitProjects: {
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap"
+    },
     contact: {
         fontSize: 14
     }
@@ -95,7 +107,16 @@ const MyDocument = () => (
                 <Text style={styles.sectionRight}>Skills</Text>
             </View>
             <Text style={styles.sectionCenter}>Experience</Text>
+            <View style={styles.splitProjects}>
             <SonarMusic/>
+            <Movies />
+            <MobileProject />
+            <BlackJack />
+            <Portfolio />
+            <SonarSwift />
+            <Todo />
+            <Pong />
+            </View>
       </View>
     </Page>
   </Document>
