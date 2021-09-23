@@ -1,8 +1,13 @@
 import * as React from 'react';
+import FrameworksAndLanguagesDict from '../utils/FrameworksAndLanguagesDict';
 
 function ResumeGenerator() {
     return (
-        <h1>This is a resume generator. jk its an h1 tag</h1>
+        <>
+            {Object.keys(FrameworksAndLanguagesDict).map((FrameworkOrLanguage) => {
+                return <h1>{FrameworkOrLanguage}</h1>
+            })}
+        </>
     )
 }
 

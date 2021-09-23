@@ -6,7 +6,7 @@ import MobileProject from "./projects/MobileProject";
 import BlackJack from "./projects/BlackJack";
 import Portfolio from "./projects/Portfolio";
 import SonarSwift from "./projects/SonarSwift";
-import Todo from "./projects/ToDo";
+import Todo from "./projects/DotNetTodoList";
 import Pong from "./projects/Pong";
 
 const profileStatement = "Well Hello There"
