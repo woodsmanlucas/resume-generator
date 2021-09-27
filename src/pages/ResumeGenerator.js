@@ -4,10 +4,11 @@ import Button from '@mui/material/Button';
 import '/home/lucas/resume-generator/src/pages/ResumeGenerator.css'
 import Container from '@mui/material/Container';
 import Box from "@mui/material/Box"
-import zIndex from '@mui/material/styles/zIndex';
+import { useHistory } from 'react-router-dom'
 
 function ResumeGenerator() {
 
+    let history = useHistory()
     const [resumeContent, setResumeContent] = React.useState({})
     const [listOfFrameworksAndLaungauges, setListOfFrameworksAndLangauges] = React.useState(Object.keys(FrameworksAndLanguagesDict))
 
@@ -92,8 +93,17 @@ function ResumeGenerator() {
           };
     }
 
+    function goToResume() {
+        history.push("/resume")
+    }
+
     return (
     <div id="page" style={{position: "relative"}}>
+    <form onSubmit={goToResume}>
+        <Container>
+            <h1>What is my profile statement</h1>
+            <input type="text" label="Profile Statement"></input>
+        </Container>
     <Container sx={{display: "grid", gridTemplateColumns: "auto auto"}}>
         <h1>Drop the items you want in order here: </h1>
         <h1>Pick from these Frameworks and Languages: </h1>
@@ -106,6 +116,8 @@ function ResumeGenerator() {
             })}
         </div>
         </Container>
+        <Button type="submit">Submit</Button>
+    </form>
     </div>
     )
 }
