@@ -54,14 +54,15 @@ function ResumeGenerator() {
                 setResumeContent(Object.entries(Object.assign(resumeContent, newObj))
                     .sort(([,a], [,b]) => a-b)
                     .reduce((r, [k,v]) => ({...r, [k]: v}), {}))
+                console.log(resumeContent)
 
                 const temp = Object.keys(resumeContent)
                 const index = temp.indexOf(button.id)
 
                 const dropzone = document.getElementById("dropzone")
 
-                if (index <  ( temp.length -1)){
-                    const valueAfter = temp[index]
+                if (index < temp.length && temp.length != 1){
+                    const valueAfter = temp[index -1]
                     console.log(valueAfter)
                     const elemAfter = document.getElementById(valueAfter)
                     console.log(elemAfter)
@@ -77,7 +78,7 @@ function ResumeGenerator() {
                 console.log(dropzone)
                 console.log(resumeContent)
                 var rect = dropzone.getBoundingClientRect();
-                newObj[button.id] = button.offsetWidth + 40 + rect.top
+                newObj[button.id] = (index+1)*((button.offsetWidth/2) + 40) + rect.top
                 setResumeContent(Object.assign(resumeContent, newObj))
                 console.log(resumeContent)
             }
@@ -97,7 +98,7 @@ function ResumeGenerator() {
         <h1>Drop the items you want in order here: </h1>
         <h1>Pick from these Frameworks and Languages: </h1>
 
-        <Box component="span" sx={{ p: 2, border: '1px dashed grey', zIndex: 5 }} id="dropzone">
+        <Box component="span" sx={{ p: 2, border: '1px dashed grey', zIndex: 5 }} className="FrameworksAndLanguages" id="dropzone">
         </Box>
         <div className="FrameworksAndLanguages" id="FrameworksAndLanguages">
             {listOfFrameworksAndLaungauges.map((FrameworkOrLanguage) => {
