@@ -1,7 +1,7 @@
 const FrameworksAndLanguagesDict = {
     Javascript: ["SonarMusic", "Portfolio", "Movies", "BlackJack", "Pong", "MobileProject", "IndustryProject"],
     React: ["SonarMusic", "Portfolio", "Movies"],
-    ReactNative: ["MobileProject", "IndustryProject"],
+    "React Native": ["MobileProject", "IndustryProject"],
     CSharp: ["DotNetTodoList"],
     DotNet: ["DotNetTodoList"],
     Mongo: ["SonarMusic", "IndustryProject"],
